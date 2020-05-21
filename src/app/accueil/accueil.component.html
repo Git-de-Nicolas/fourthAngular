@@ -1,0 +1,43 @@
+<div class="container">
+  <h2 class="h2 text-center"> Voici la liste des voyages disponible </h2>
+
+
+  <!--<ul class="list-group">
+    <li class="list-group-item" *ngFor="let voyage of travelList; let idx=index"> Lieu :
+      <a routerLink="/coordonnees/{{idx}}">{{voyage.place}}</a>
+      <p> Description : {{voyage.description}}</p>
+      <p> Nombre de jours : {{voyage.nbDays}} jours</p>
+      <p>Prix par personne : {{voyage.pricePerPerson}} € </p>
+    </li>
+  </ul>-->
+
+  <div class="row">
+    <div class="card-deck">
+      <div class="card mt-4" style="width: 21rem;" *ngFor="let voyage of travelList; let idx=index">
+
+        <img class="card-img-top" [src]="voyage.coverURL" alt="Card image cap" *ngIf="voyage.coverURL">
+
+        <div class="card-body">
+
+          <h5 class="card-title"><a routerLink="/coordonnees/{{idx}}">{{voyage.place}}</a></h5>
+
+          <p class="card-text">Description : {{voyage.description}}</p>
+
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Nombre de jours : {{voyage.nbDays}} jours</li>
+            <li class="list-group-item">Prix par personne : {{voyage.pricePerPerson}} €</li>
+            <hr>
+          </ul>
+
+          <div class="card-footer">
+            <a href="#" class="btn btn-primary"> J'y vais ! </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
