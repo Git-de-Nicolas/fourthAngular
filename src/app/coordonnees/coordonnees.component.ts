@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {BookingService} from "../service/booking.service";
+import {User} from "../entity/user.entity";
 
 @Component({
   selector: 'app-coordonnees',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CoordonneesComponent implements OnInit {
 
-  constructor() { }
+  newUser: User = new User;
+
+  constructor(private bookingService: BookingService) {
+  }
 
   ngOnInit(): void {
   }
 
+  addUser() {
+    this.bookingService.addUser(this.newUser);
+  }
 }
+
+
+// Enregistrer le Travel et le User pour le moment

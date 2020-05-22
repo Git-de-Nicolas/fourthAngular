@@ -14,4 +14,9 @@ export class BookingService {
 
   constructor() {
   }
+
+
+  addUser(user: User) {
+   // this.user.unshift(newUser);
+  }
 }
