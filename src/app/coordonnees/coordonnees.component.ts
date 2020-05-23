@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {BookingService} from "../service/booking.service";
 import {User} from "../entity/user.entity";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-coordonnees',
@@ -9,9 +10,9 @@ import {User} from "../entity/user.entity";
 })
 export class CoordonneesComponent implements OnInit {
 
-  newUser: User = new User;
+  newUser: User = new User();
 
-  constructor(private bookingService: BookingService) {
+  constructor(private bookingService: BookingService, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -19,6 +20,8 @@ export class CoordonneesComponent implements OnInit {
 
   addUser() {
     this.bookingService.addUser(this.newUser);
+
+    this.router.navigate(['optionsvoyage']);
   }
 }
 
