@@ -7,7 +7,7 @@
 
       <label for="exampleInputEmail1"> Nombre de personnes : </label>
 
-      <input type="number"  name="volume" min="1" max="10" [(ngModel)]="newBooking.nbPerson">
+      <input type="number" name="volume" min="1" max="10" [(ngModel)]="newBooking.nbPerson">
 
     </div>
 
@@ -15,7 +15,7 @@
 
       <label for="exampleInputEmail1"> Date de départ : </label>
 
-      <input type="date" class="form-control" >
+      <input type="date" class="form-control" [(ngModel)]="newBooking.startDate">
 
 
     </div>
@@ -24,7 +24,7 @@
 
       <label for="exampleInputEmail1"> Commentaires particuliers : </label>
 
-      <input type="textarea" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <input type="textarea" class="form-control" id="exampleInputEmail1" [(ngModel)]="newBooking.additionalInfos">
 
       <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 
